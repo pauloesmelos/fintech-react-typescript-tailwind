@@ -1,1 +1,16 @@
 @import "tailwindcss";
+
+:root {
+    --primary-marrom: #463220;
+    --primary-neutral: #66593c;
+    --primary-white: #ffff;
+    --second-white: #eceadd;
+}
+@layer base {
+    body {
+        @apply bg-[var(--second-white)];
+    }
+    .marrom {
+        @apply text-[var(--primary-marrom)];
+    }
+}

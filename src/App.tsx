@@ -1,11 +1,21 @@
-import { useState } from 'react';
+import { VendasGlobalContextProvider } from "./components/global/context-vendas/VendasGlobalContext";
+import Header from "./components/header";
+import Sidenav from "./components/sidenav";
+import Resumo from "./pages/resumo";
 
 const App = () => {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <h1 className="text-red-500">Oi</h1>
+      <VendasGlobalContextProvider>
+        <div>
+          <Sidenav />
+          <main>
+            <Header />
+            <Resumo />
+          </main>
+        </div>
+      </VendasGlobalContextProvider>
     </>
   )
 }
