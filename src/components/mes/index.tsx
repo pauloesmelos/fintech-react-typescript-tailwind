@@ -2,7 +2,7 @@ import MesBtn from './mes-btn';
 
 const Mes = () => {
   return (
-    <div>
+    <div className="flex items-center gap-5 pt-5">
         <MesBtn num={-2} />
         <MesBtn num={-1} />
         <MesBtn num={0} />

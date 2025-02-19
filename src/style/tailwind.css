@@ -8,9 +8,12 @@
 }
 @layer base {
     body {
-        @apply bg-[var(--second-white)];
+        @apply bg-[var(--primary-white)];
     }
     .marrom {
         @apply text-[var(--primary-marrom)];
+    }
+    .bg-marrom-claro {
+        @apply bg-[var(--second-white)];
     }
 }
