@@ -1,18 +1,7 @@
 import { createContext, PropsWithChildren, useState, Dispatch, SetStateAction, useEffect, useContext } from "react";
 import useGetData from "../../../hooks/useGetData";
+import { Vendas } from "../../../types/Venda";
 
-type Pagamento = "boleto" | "cartao" | "pix";
-type Status = "processando" | "pago" | "falha";
-
-interface Vendas {
-    id: string,
-    nome: string,
-    preco: number,
-    status: Status,
-    pagamento: Pagamento,
-    parcelas: number,
-    data: string
-}
 interface VendasGlobalC {
     vendas: Array<Vendas> | null,
     setVendas: Dispatch<SetStateAction<Array<Vendas> | null>>

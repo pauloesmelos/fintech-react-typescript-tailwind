@@ -8,7 +8,7 @@
 }
 @layer base {
     body {
-        @apply bg-[var(--primary-white)];
+        @apply bg-neutral-100;
     }
     .marrom {
         @apply text-[var(--primary-marrom)];
@@ -16,4 +16,13 @@
     .bg-marrom-claro {
         @apply bg-[var(--second-white)];
     }
+}
+.shadow-branco {
+    box-shadow: 0 0 10px #ffff;
+}
+.shadow-marrom {
+    box-shadow: 0 0 10px #cccc;
+}
+.shadow-marrom:hover {
+    box-shadow: 0 0 10px var(--primary-marrom);
 }

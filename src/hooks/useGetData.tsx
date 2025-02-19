@@ -1,18 +1,6 @@
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
-
-type Pagamento = "boleto" | "cartao" | "pix";
-type Status = "processando" | "pago" | "falha";
-
-interface Vendas {
-    id: string,
-    nome: string,
-    preco: number,
-    status: Status,
-    pagamento: Pagamento,
-    parcelas: number,
-    data: string
-}
+import { Vendas } from "../types/Venda";
 
 const getData = async (url: string): Promise<Array<Vendas>> => {
     return await axios.get(`${url}`)

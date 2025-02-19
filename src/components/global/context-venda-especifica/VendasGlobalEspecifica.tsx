@@ -1,28 +1,17 @@
 import { useState, useContext, PropsWithChildren, createContext, Dispatch, SetStateAction, useEffect } from 'react';
 import useGetDataSpecify from '../../../hooks/useGetDataSpecify';
 import { useInputGlobalContext } from '../input/InputGlobalContext';
-
-type Status = "pago" | "processando" | "falha";
-type Pagamento = "cartao" | "pix" | "boleto";
-interface Venda {
-    id: string,
-    nome: string,
-    preco: number,
-    status: Status,
-    pagamento: Pagamento,
-    parcelas: number,
-    data: string
-}
+import { Vendas } from '../../../types/Venda';
 
 interface VendaGlobalE {
-    vendas: Array<Venda> | null,
-    setVendas: Dispatch<SetStateAction<Array<Venda> | null>>
+    vendas: Array<Vendas> | null,
+    setVendas: Dispatch<SetStateAction<Array<Vendas> | null>>
 }
 
 const VendasGlobalEspecifica = createContext<VendaGlobalE | null>(null);
 export const VendasGlobalEspecificaProvider = ({ children }: PropsWithChildren) => {
   const { inicio, final } = useInputGlobalContext();
-  const [vendas, setVendas] = useState<Array<Venda> | null>(null);
+  const [vendas, setVendas] = useState<Array<Vendas> | null>(null);
   const { data } = useGetDataSpecify(inicio, final);
 
   useEffect(() => {
